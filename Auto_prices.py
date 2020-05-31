@@ -7,23 +7,13 @@ pd.set_option('display.max_columns', 20)
 pd.set_option('display.width', 2000)
 cat = pd.read_csv('D:\PycharmProjects\Каталог_Олег\pattern.csv')
 cat.columns = cat.columns.str.replace(' ', '_')
-with con:
-    for i in range(len(cat)):
+
+for i in range(2):
+    with con:
         cur = con.cursor()
-        sql = 'insert into primer (insert into mycat(\
-            Номер_поставляемой_запчасти,\
-            Производитель,\
-            Название,\
-            Артикул_OEM,\
-            замены,\
-            Группа,\
-            Подкатегория,\
-            Применение,\
-            Серия,\
-            Комментарий_к_детали,\
-            Вес,\
-            Изображения,\
-            URL) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+        sql = 'insert into primer (insert into mycat(Номер_поставляемой_запчасти, Производитель, Название, ' \
+              'Артикул_OEM, замены, Группа, Подкатегория, Применение, Серия, Комментарий_к_детали, Вес, Изображения,  ' \
+              'URL) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) '
         val = (f'{cat.Номер_поставляемой_запчасти[i]}',
                f'{cat.Производитель[i]}',
                f'{cat.Название[i]}',
