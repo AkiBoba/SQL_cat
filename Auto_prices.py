@@ -11,7 +11,7 @@ cat.columns = cat.columns.str.replace(' ', '_')
 for i in range(2):
     with con:
         cur = con.cursor()
-        sql = 'insert into primer (insert into mycat(Номер_поставляемой_запчасти, Производитель, Название, ' \
+        sql = 'insert into mycat(Номер_поставляемой_запчасти, Производитель, Название, ' \
               'Артикул_OEM, замены, Группа, Подкатегория, Применение, Серия, Комментарий_к_детали, Вес, Изображения,  ' \
               'URL) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) '
         val = (f'{cat.Номер_поставляемой_запчасти[i]}',
