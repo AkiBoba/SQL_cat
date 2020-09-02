@@ -1,7 +1,7 @@
 import pandas as pd
 import pymysql
 
-con = pymysql.connect('127.0.0.1', 'root', '1141', 'basic_sql')
+con = pymysql.connect('127.0.0.1', 'root', 'пароль', 'basic_sql')
 
 pd.set_option('display.max_columns', 20)
 pd.set_option('display.width', 2000)
