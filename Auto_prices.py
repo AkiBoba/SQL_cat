@@ -8,7 +8,7 @@ pd.set_option('display.width', 2000)
 cat = pd.read_csv('D:\PycharmProjects\Каталог_Олег\pattern.csv')
 cat.columns = cat.columns.str.replace(' ', '_')
 
-for i in range(2):
+for i in range(len(cat.index)):
     with con:
         cur = con.cursor()
         sql = 'insert into mycat(Номер_поставляемой_запчасти, Производитель, Название, ' \
